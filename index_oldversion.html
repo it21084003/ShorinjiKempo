@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Learning Website</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding-top: 56px; /* Adjust based on your navbar height */
+      }
+
+      .sidebar {
+        padding-top: 20px;
+      }
+
+      .chapter-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .list-group-item {
+        cursor: pointer;
+      }
+
+      .navbar-brand {
+        font-style: italic;
+        color: red;
+      }
+
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 100%;
+          height: auto;
+          position: relative;
+          display: none; /* Hide the sidebar by default on smaller screens */
+        }
+
+        .navbar-toggler-icon {
+          display: block; /* Show the hamburger icon on smaller screens */
+        }
+
+        .navbar-nav {
+          flex-direction: column; /* Stack the navigation items vertically on smaller screens */
+        }
+
+        .navbar-toggler {
+          order: -1; /* Move the hamburger icon to the top on smaller screens */
+        }
+
+        .collapsed .sidebar {
+          display: none; /* Hide the sidebar when the button is collapsed */
+        }
+      }
+
+      @media (min-width: 769px) {
+        .navbar {
+          background-color: #343a40; /* Add background color to the navbar on larger screens */
+        }
+
+        .navbar-brand {
+          margin-right: auto; /* Push the brand/logo to the left */
+        }
+
+        .navbar-nav {
+          justify-content: center; /* Center the navigation items */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar with Hamburger Icon -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a
+        class="navbar-brand"
+        href="#"
+        style="font-weight: 700; color: rgb(240, 247, 247)"
+        >少林寺拳法</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        onclick="toggleSidebar()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Your navigation items go here -->
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 sidebar">
+          <div class="list-group">
+            <!-- ... (unchanged) ... -->
+            <a
+              href="#"
+              class="list-group-item chapter-title"
+              data-toggle="collapse"
+              data-target="#chapter1"
+              >5級</a
+            >
+            <div id="chapter1" class="collapse">
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('5級', 'chapter1_lesson1', '流水蹴（前）', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >流水蹴（前）</a
+              >
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('5級', 'chapter1_lesson2', '上受蹴（表）', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >上受蹴（表）</a
+              >
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('5級', 'chapter1_lesson3', '上受蹴（裏）', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >上受蹴（裏）</a
+              >
+            </div>
+
+            <a
+              href="#"
+              class="list-group-item chapter-title"
+              data-toggle="collapse"
+              data-target="#chapter2"
+              >4級</a
+            >
+            <div id="chapter2" class="collapse">
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('4級', 'chapter2_lesson1', '外受突（裏・表）', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >外受突（裏・表）</a
+              >
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('4級', 'chapter2_lesson2', '外受蹴（裏・表）', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >外受蹴（裏・表）</a
+              >
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('4級', 'chapter2_lesson3', '片手送小手', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >片手送小手</a
+              >
+            </div>
+
+            <!-- Repeat the pattern for other chapters -->
+
+            <a
+              href="#"
+              class="list-group-item chapter-title"
+              data-toggle="collapse"
+              data-target="#chapter3"
+              >3級</a
+            >
+            <div id="chapter3" class="collapse">
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('3級', 'chapter3_lesson1', '腕十字固より', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >腕十字固より</a
+              >
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('3級', 'chapter3_lesson2', '両手寄抜', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >両手寄抜</a
+              >
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('3級', 'chapter3_lesson3', '巻抜き（両手）', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >巻抜き（両手）</a
+              >
+            </div>
+
+            <a
+              href="#"
+              class="list-group-item chapter-title"
+              data-toggle="collapse"
+              data-target="#chapter2"
+              >2級</a
+            >
+            <div id="chapter2" class="collapse">
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('2級', 'chapter2_lesson1', '腕十字固より', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >腕十字固より</a
+              >
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('2級', 'chapter2_lesson2', '両手寄抜', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >両手寄抜</a
+              >
+              <a
+                href="#"
+                class="list-group-item"
+                onclick="changeVideo(new LessonData('2級', 'chapter2_lesson3', '巻抜き（両手）', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+                >巻抜き（両手）</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9 pt-3 main-content">
+          <h2 id="mainContentTitle">Main Content Title</h2>
+
+          <!-- Video Player -->
+          <div class="embed-responsive embed-responsive-16by9 mt-4">
+            <video class="embed-responsive-item" controls>
+              <!-- The source will be updated dynamically by the JavaScript code -->
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <!-- Additional Content -->
+          <div class="pt-3" id="additionalContent">
+            <h3 id="additionalContentTitle">Additional Content Title</h3>
+            <p id="additionalContentParagraph">
+              This is some additional content that you can include in the main
+              area.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript to change video source -->
+    <script>
+      class LessonData {
+        constructor(chapter, lesson, title, content) {
+          this.chapter = chapter;
+          this.lesson = lesson;
+          this.title = title;
+          this.content = content;
+        }
+      }
+
+      function toggleSidebar() {
+        var sidebar = document.querySelector(".sidebar");
+        if (window.innerWidth <= 768) {
+          sidebar.style.display =
+            sidebar.style.display === "none" || sidebar.style.display === ""
+              ? "block"
+              : "none";
+        } else {
+          sidebar.style.display = "block"; // Always show the sidebar on larger screens
+        }
+      }
+
+      function changeVideo(lesson) {
+        // Construct the video source based on the lesson
+        var videoSource = `video/${lesson.lesson}.mp4`;
+
+        // Update the source of the embedded video
+        document.querySelector("video").src = videoSource;
+
+        // Start playing the video
+        document.querySelector("video").play();
+
+        // Store the current lesson and chapter in localStorage
+        localStorage.setItem("currentLesson", lesson.lesson);
+        localStorage.setItem("currentChapter", lesson.chapter);
+
+        // Update the Additional Content based on the lesson
+        updateAdditionalContent(lesson);
+
+        // Update the Main Content Title based on the chapter
+        document.querySelector('#mainContentTitle').textContent = lesson.chapter;
+
+         
+      }
+
+      function updateAdditionalContent(lesson) {
+        var additionalContentTitle = document.querySelector(
+          "#additionalContentTitle"
+        );
+        var additionalContentParagraph = document.querySelector(
+          "#additionalContentParagraph"
+        );
+
+        // Check if lesson is a valid object and has necessary properties
+        if (lesson && lesson.title && lesson.content) {
+          // Set content based on the lesson
+          additionalContentTitle.textContent = lesson.title;
+          additionalContentParagraph.textContent = lesson.content;
+        } else {
+          // Display a default message if the lesson object is invalid or properties are missing
+          additionalContentTitle.textContent = "水蹴（前）";
+          additionalContentParagraph.textContent =
+            "説明説明説明説明説明説明説明説明説明説明説明説明";
+        }
+      }
+
+      // Check if there's a stored lesson and chapter and load them
+      document.addEventListener("DOMContentLoaded", function () {
+        var storedLesson = localStorage.getItem("currentLesson");
+        var storedChapter = localStorage.getItem("currentChapter");
+        if (storedLesson && storedChapter) {
+          changeVideo(new LessonData(storedChapter, storedLesson, "", ""));
+        }
+      });
+    </script>
+
+    <!-- Bootstrap JS and jQuery (required for Bootstrap components) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
