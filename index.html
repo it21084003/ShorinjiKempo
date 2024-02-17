@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video Learning Website</title>
-     <!-- Bootstrap CSS -->
-     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-     <!-- Font Awesome for icons -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
     <style>
       body {
         background-color: #fff;
@@ -80,12 +86,10 @@
         transition: transform 0.3s ease;
       }
 
-      #mainContentTitle{
+      #mainContentTitle {
         padding-left: 30px;
         margin-top: -5px;
       }
-
-      
     </style>
   </head>
   <body>
@@ -93,6 +97,69 @@
     <label for="menu-trigger"><i class="fas fa-bars"></i></label>
 
     <header>
+      <a
+        href="#"
+        class="list-group-item chapter-title"
+        data-toggle="collapse"
+        data-target="#chapter0"
+        >単演基本法形</a
+      >
+      <div id="chapter0" class="collapse">
+        <a
+          href="#"
+          class="list-group-item"
+          onclick="changeVideo(new LessonData('単演基本法形', 'chapter0_lesson1', '天地券第一系', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+          >天地券第一系</a
+        >
+        <a
+          href="#"
+          class="list-group-item"
+          onclick="changeVideo(new LessonData('単演基本法形', 'chapter0_lesson2', '天地券第二系', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+          >天地券第二系</a
+        >
+        <a
+          href="#"
+          class="list-group-item"
+          onclick="changeVideo(new LessonData('単演基本法形', 'chapter0_lesson3', '天地券第三系', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+          >天地券第三系</a
+        >
+        <a
+          href="#"
+          class="list-group-item"
+          onclick="changeVideo(new LessonData('単演基本法形', 'chapter0_lesson4', '天地券第四系', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+          >天地券第四系</a
+        >
+        <a
+          href="#"
+          class="list-group-item"
+          onclick="changeVideo(new LessonData('単演基本法形', 'chapter0_lesson5', '天地券第五系', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+          >天地券第五系</a
+        >
+        <a
+          href="#"
+          class="list-group-item"
+          onclick="changeVideo(new LessonData('単演基本法形', 'chapter0_lesson6', '天地券第六系', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+          >天地券第六系</a
+        >
+        <a
+          href="#"
+          class="list-group-item"
+          onclick="changeVideo(new LessonData('単演基本法形', 'chapter0_lesson7', '龍王券第一系', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+          >龍王券第一系</a
+        >
+        <a
+          href="#"
+          class="list-group-item"
+          onclick="changeVideo(new LessonData('単演基本法形', 'chapter0_lesson8', '義和券第一系', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+          >義和券第一系</a
+        >
+        <a
+          href="#"
+          class="list-group-item"
+          onclick="changeVideo(new LessonData('単演基本法形', 'chapter0_lesson9', '義和券第二系', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
+          >義和券第二系</a
+        >
+      </div>
       <a
         href="#"
         class="list-group-item chapter-title"
@@ -144,7 +211,7 @@
           >上受突（表）</a
         >
       </div>
-        <a
+      <a
         href="#"
         class="list-group-item chapter-title"
         data-toggle="collapse"
@@ -252,9 +319,7 @@
           onclick="changeVideo(new LessonData('4級', 'chapter3_lesson7', '突抜（外・内）', '説明説明説明説明説明説明説明説明説明説明説明説明'))"
           >突抜（外・内）</a
         >
-        
       </div>
-
 
       <a
         href="#"
@@ -721,11 +786,12 @@
             area.
           </p>
         </div>
+
+       
       </div>
     </div>
     <script>
-
-class LessonData {
+      class LessonData {
         constructor(chapter, lesson, title, content) {
           this.chapter = chapter;
           this.lesson = lesson;
@@ -752,10 +818,11 @@ class LessonData {
         updateAdditionalContent(lesson);
 
         // Update the Main Content Title based on the chapter
-        document.querySelector('#mainContentTitle').textContent = lesson.chapter;
+        document.querySelector("#mainContentTitle").textContent =
+          lesson.chapter;
 
         // Close the header by unchecking the menu-trigger checkbox
-        document.getElementById('menu-trigger').checked = false;
+        document.getElementById("menu-trigger").checked = false;
       }
 
       function updateAdditionalContent(lesson) {
@@ -787,7 +854,7 @@ class LessonData {
           changeVideo(new LessonData(storedChapter, storedLesson, "", ""));
         }
       });
-
+      
     </script>
     <!-- Bootstrap JS and jQuery (required for Bootstrap components) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
